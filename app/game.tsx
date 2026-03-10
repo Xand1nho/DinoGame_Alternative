@@ -1,4 +1,4 @@
-import Dino from "@/components/DINO";
+import Shadow from "@/components/Shadow";
 import MovingBackground from "@/components/MovingBackground";
 import Obstacle from "@/components/Obstacle";
 import Score from "@/components/Score";
@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { Pressable, StyleSheet, View } from "react-native";
 
 export default function GameScreean() {
-  const {jump}= useGame();
+  const { jump } = useGame();
   const [obstacles, setObstacles] = useState([] as any);
 
   function spawnObstacle() {
@@ -21,7 +21,7 @@ export default function GameScreean() {
   }
 
   useEffect(() => {
-    const interval = setInterval(() => spawnObstacle(), 10000);
+    const interval = setInterval(() => spawnObstacle(), 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -30,7 +30,7 @@ export default function GameScreean() {
     <Pressable onPress={jump} style={styles.button}>
       <View style={styles.container}>
         <MovingBackground />
-        <Dino />
+        <Shadow />
         <Score />
         {obstacles.map((obstacle: any) => (
           <Obstacle key={obstacle} onEnd={() => removeObstacle(obstacle)} />
@@ -50,5 +50,6 @@ const styles = StyleSheet.create({
     height: "100%",
     backgroundColor: "rgb(247, 247, 247)",
     position: "relative",
+    overflow: 'hidden',
   },
 });

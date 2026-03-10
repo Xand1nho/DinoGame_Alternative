@@ -46,11 +46,11 @@ export default function RootLayout() {
 function RootLayoutNav() {
   return (
     <GameProvider>
-    <Stack>
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="game" options={{ headerShown: false }} />
-      <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-    </Stack>
+      <Stack>
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="game" options={{ headerShown: false }} />
+        <Stack.Screen name="end" options={{ headerShown: false }} />
+      </Stack>
     </GameProvider>
   );
 }

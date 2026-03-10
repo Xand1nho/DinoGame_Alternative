@@ -11,7 +11,7 @@ export default function Score() {
   useEffect(() => {
     const interval = setInterval(() => {
       setScore((oldState: any) => oldState + 1);
-    }, 500);
+    }, 800);
 
 
     return () => clearInterval(interval);
@@ -35,5 +35,6 @@ const s = StyleSheet.create({
   text: {
     fontSize: 20,
     fontWeight: "bold",
+    color: "rgb(255, 255, 255)",
   },
 });
